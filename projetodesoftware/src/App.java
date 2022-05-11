@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App
+public class App extends LimparBuffer
 {
     public static void main(String[] args) throws Exception 
     {
@@ -14,6 +14,7 @@ public class App
             Telas tela = new Telas();
             tela.inicial();    
             escolha = teclado.nextInt();
+            teclado.nextLine();
             switch(escolha)
             {
                 case 1:
@@ -24,7 +25,7 @@ public class App
                     do
                     {
                         System.out.print("Digite seu login: ");
-                        login = teclado.next();
+                        login = teclado.nextLine();
                         if(bancodeinf.verificaLogin(login))
                         {
                             System.out.println("\n\nJá existe esse 'login' dentro do IFACE, por favor escolha outro 'login'\n\n");
@@ -37,13 +38,13 @@ public class App
 
                     //SENHA
                     System.out.print("Digite sua senha: ");
-                    senha = teclado.next();
+                    senha = teclado.nextLine();
 
                     //NICKNAME
                     do
                     {
                         System.out.print("Digite seu nome (nickname) (como você será conhecido no IFACE): ");
-                        nome = teclado.next();
+                        nome = teclado.nextLine();
                         if(bancodeinf.verificaNome(nome))
                         {
                             System.out.println("\n\nJá existe esse nome dentro do IFACE, por favor escolha outro nome\n\n");
@@ -58,10 +59,12 @@ public class App
                     break;
                 case 2:
                     System.out.println("\n\nFAZENDO LOGIN\n");
+
                     System.out.print("Digite seu login: ");
-                    login = teclado.next();
+                    login = teclado.nextLine();
                     System.out.print("Digite sua senha: ");
-                    senha = teclado.next();
+                    senha = teclado.nextLine();
+                    
                     if(bancodeinf.verificaConta(login, senha))
                     {
                         Usuario a = bancodeinf.enviaUsuario(login, senha);

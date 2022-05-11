@@ -6,23 +6,28 @@ public class Armazena
     private ArrayList<Usuario> banco;
 
     //MÉTODOS ====================================
-    public Armazena() //CRIAR OBJETO
+    
+    //CRIAR OBJETO
+    public Armazena() 
     {
         this.banco = new ArrayList<Usuario>();
     }
 
-    public void addUsuario(String login, String senha, String nickname) //ADICIONAR USUÁRIO NA ESTRUTURA
+    //ADICIONAR USUÁRIO NA ESTRUTURA
+    public void addUsuario(String login, String senha, String nickname)
     {
         Usuario a = new Usuario(login, senha, nickname, true);
         this.banco.add(a);
     }
 
-    public ArrayList<Usuario> getUsuarios() //PEGAR A ESTRUTURA QUE ARMAZENA TODOS OS USUÁRIOS
+    //PEGAR A ESTRUTURA QUE ARMAZENA TODOS OS USUÁRIOS
+    public ArrayList<Usuario> getUsuarios() 
     {
         return this.banco;
     }
     
-    public Usuario enviaUsuario(String login, String senha) //ENVIAR USUÁRIO DADO O LOGIN E A SENHA
+    //ENVIAR O OBJETO USUÁRIO DADO O LOGIN E A SENHA
+    public Usuario enviaUsuario(String login, String senha) 
     {
         for (Usuario usuario : banco)
         {
@@ -35,7 +40,8 @@ public class Armazena
         return null;
     }
 
-    public boolean verificaConta(String login, String senha) //VERIFICAR SE A CONTA EXISTE DENTRO DO SISTEMA DADO O LOGIN E A SENHA
+    //VERIFICAR SE A CONTA EXISTE DENTRO DO "BANCO DE USUÁRIOS" DADO O LOGIN E A SENHA
+    public boolean verificaConta(String login, String senha) 
     {
         for (Usuario usuario : this.banco)
         {
@@ -47,7 +53,8 @@ public class Armazena
         return false;
     }
 
-    public boolean verificaLogin(String login) //VERIFICAR SE O LOGIN JÁ EXISTE NO SISTEMA (SE JÁ EXISTIR RETORNA 'TRUE')
+    //VERIFICAR SE O LOGIN JÁ EXISTE NO SISTEMA (SE JÁ EXISTIR RETORNA 'TRUE')
+    public boolean verificaLogin(String login) 
     {
         for (Usuario usuario : banco)
         {
@@ -59,7 +66,8 @@ public class Armazena
         return false;
     }
 
-    public boolean verificaNome(String nome) //VERIFICAR SE O NICKNAME JÁ EXISTE NO SISTEMA
+    //VERIFICAR SE O NICKNAME JÁ EXISTE NO SISTEMA (SE JÁ EXISTIR RETORNA 'TRUE')
+    public boolean verificaNome(String nome) 
     {
         for (Usuario usuario : banco)
         {
@@ -70,7 +78,6 @@ public class Armazena
         }
         return false;
     }
-
 
     /*public void todosUsuarios() //EXIBIR TODOS OS USUÁRIOS
     {
